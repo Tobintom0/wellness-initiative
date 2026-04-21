@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wellness Project - Team Wellbeing Initiative</title>
+    <meta name="description" content="Share your ideas and opinions about our Team Wellbeing Initiative">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+            color: #161616;
+            line-height: 1.6;
+            padding: 32px 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #161616;
+            margin-bottom: 16px;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            color: #525252;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Poster Section */
+        .poster-section {
+            background: white;
+            border-radius: 8px;
+            padding: 48px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .poster {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #e8f5e9 0%, #b3e5fc 50%, #f3e5f5 100%);
+            border-radius: 12px;
+            padding: 64px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .poster-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .poster-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #0f62fe;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .poster-tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #161616;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        .poster-message {
+            font-size: 1.25rem;
+            color: #525252;
+            margin-bottom: 48px;
+        }
+
+        .wellness-icons {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 48px 0;
+            flex-wrap: wrap;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-label {
+            font-size: 0.875rem;
+            color: #525252;
+            font-weight: 500;
+        }
+
+        .poster-footer {
+            font-size: 0.875rem;
+            color: #8d8d8d;
+            margin-top: 48px;
+            font-weight: 400;
+        }
+
+        /* Feedback Section */
+        .feedback-section {
+            background: white;
+            border-radius: 8px;
+            padding: 48px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .feedback-header h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #161616;
+            margin-bottom: 16px;
+        }
+
+        .feedback-header p {
+            font-size: 1rem;
+            color: #525252;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Monday.com Form Embed */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .monday-form-embed {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fallback Button (if iframe doesn't work) */
+        .form-button {
+            display: inline-block;
+            padding: 16px 32px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            background: #0f62fe;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .form-button:hover {
+            background: #0353e9;
+            box-shadow: 0 4px 12px rgba(15, 98, 254, 0.3);
+        }
+
+        /* Privacy Notice */
+        .privacy-notice {
+            background: #f4f4f4;
+            border-left: 3px solid #0f62fe;
+            padding: 16px;
+            margin-top: 24px;
+            border-radius: 4px;
+        }
+
+        .privacy-notice p {
+            font-size: 0.875rem;
+            color: #525252;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 8px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .poster-section,
+            .feedback-section {
+                padding: 24px;
+            }
+
+            .poster {
+                padding: 32px 24px;
+            }
+
+            .poster-title {
+                font-size: 2.5rem;
+            }
+
+            .poster-tagline {
+                font-size: 1.25rem;
+            }
+
+            .poster-message {
+                font-size: 1.125rem;
+            }
+
+            .wellness-icons {
+                gap: 16px;
+            }
+
+            .icon-circle {
+                width: 56px;
+                height: 56px;
+                font-size: 1.75rem;
+            }
+
+            .feedback-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>The Wellness Project</h1>
+            <p>We're excited to share our new Team Wellbeing Initiative and would love to hear your thoughts!</p>
+        </div>
+
+        <!-- Poster Section -->
+        <div class="poster-section">
+            <div class="poster">
+                <div class="poster-content">
+                    <h1 class="poster-title">The Wellness Project</h1>
+                    <p class="poster-tagline">Nurturing wellbeing, together</p>
+                    <p class="poster-message">Watch this space for more updates</p>
+                    
+                    <div class="wellness-icons">
+                        <div class="icon-item">
+                            <div class="icon-circle">🧘</div>
+                            <span class="icon-label">Mindfulness</span>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-circle">💪</div>
+                            <span class="icon-label">Fitness</span>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-circle">🤝</div>
+                            <span class="icon-label">Community</span>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-circle">🌱</div>
+                            <span class="icon-label">Growth</span>
+                        </div>
+                    </div>
+                    
+                    <p class="poster-footer">ISDL Design and Content Team</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+            <div class="feedback-header">
+                <h2>Share Your Ideas & Opinions</h2>
+                <p>Your feedback will help shape our Team Wellbeing Initiative. Please share your thoughts below.</p>
+            </div>
+
+            <div class="form-container">
+                <!-- REPLACE THIS SECTION WITH YOUR MONDAY.COM FORM -->
+                <!-- Option 1: Embedded Form (Recommended) -->
+                <iframe 
+                    class="monday-form-embed"
+                    src="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1"
+                    width="100%"
+                    height="800"
+                    frameborder="0">
+                </iframe>
+
+                <!-- Option 2: Button Link (Fallback) -->
+                <!-- Uncomment if iframe doesn't work -->
+                <!--
+                <div style="text-align: center; padding: 32px;">
+                    <a href="YOUR_MONDAY_FORM_URL_HERE" 
+                       target="_blank"
+                       class="form-button">
+                        Open Feedback Form
+                    </a>
+                </div>
+                -->
+            </div>
+
+            <div class="privacy-notice">
+                <p><strong>Privacy Note:</strong> Your feedback is confidential and will only be used to improve our Team Wellbeing Initiative. You can submit anonymously by leaving the name and email fields blank in the form.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
