@@ -7,67 +7,185 @@
     <meta name="description" content="Share your ideas and opinions about our Team Wellbeing Initiative">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* ============================================
+           CARBON DESIGN SYSTEM - DARK THEME
+           ============================================ */
+        
+        /* CSS Custom Properties - Carbon Tokens */
+        :root {
+            /* Carbon Color Tokens - Gray Scale */
+            --cds-gray-100: #161616;
+            --cds-gray-90: #262626;
+            --cds-gray-80: #393939;
+            --cds-gray-70: #525252;
+            --cds-gray-60: #6f6f6f;
+            --cds-gray-50: #8d8d8d;
+            --cds-gray-40: #a8a8a8;
+            --cds-gray-30: #c6c6c6;
+            --cds-gray-20: #e0e0e0;
+            --cds-gray-10: #f4f4f4;
+            
+            /* Carbon Blue Tokens */
+            --cds-blue-60: #0f62fe;
+            --cds-blue-70: #0043ce;
+            --cds-blue-50: #4589ff;
+            --cds-blue-40: #78a9ff;
+            --cds-blue-20: #d0e2ff;
+            
+            /* Carbon Layer Tokens */
+            --cds-layer-01: #262626;
+            --cds-layer-02: #393939;
+            --cds-layer-03: #525252;
+            --cds-layer-accent-01: #393939;
+            
+            /* Carbon Text Tokens */
+            --cds-text-primary: #f4f4f4;
+            --cds-text-secondary: #c6c6c6;
+            --cds-text-placeholder: #6f6f6f;
+            --cds-text-on-color: #ffffff;
+            --cds-text-inverse: #161616;
+            
+            /* Carbon Interactive Tokens */
+            --cds-interactive-01: #0f62fe;
+            --cds-interactive-02: #393939;
+            --cds-interactive-03: #0f62fe;
+            --cds-interactive-04: #4589ff;
+            
+            /* Carbon Border Tokens */
+            --cds-border-subtle-01: #393939;
+            --cds-border-strong-01: #6f6f6f;
+            --cds-border-interactive: #0f62fe;
+            
+            /* Carbon Spacing Tokens (2px base grid) */
+            --cds-spacing-02: 0.125rem;  /* 2px */
+            --cds-spacing-03: 0.25rem;   /* 4px */
+            --cds-spacing-04: 0.5rem;    /* 8px */
+            --cds-spacing-05: 0.75rem;   /* 12px */
+            --cds-spacing-06: 1rem;      /* 16px */
+            --cds-spacing-07: 1.5rem;    /* 24px */
+            --cds-spacing-08: 2rem;      /* 32px */
+            --cds-spacing-09: 2.5rem;    /* 40px */
+            --cds-spacing-10: 3rem;      /* 48px */
+            --cds-spacing-11: 4rem;      /* 64px */
+            --cds-spacing-12: 5rem;      /* 80px */
+            --cds-spacing-13: 6rem;      /* 96px */
+            
+            /* Carbon Type Scale */
+            --cds-productive-heading-07: 3.375rem;  /* 54px */
+            --cds-productive-heading-06: 2.625rem;  /* 42px */
+            --cds-productive-heading-05: 2rem;      /* 32px */
+            --cds-productive-heading-04: 1.75rem;   /* 28px */
+            --cds-productive-heading-03: 1.25rem;   /* 20px */
+            --cds-body-long-02: 1rem;               /* 16px */
+            --cds-body-short-02: 1rem;              /* 16px */
+            --cds-label-01: 0.75rem;                /* 12px */
+            --cds-helper-text-01: 0.75rem;          /* 12px */
+            
+            /* Carbon Motion Tokens */
+            --cds-duration-fast-01: 70ms;
+            --cds-duration-fast-02: 110ms;
+            --cds-duration-moderate-01: 150ms;
+            --cds-duration-moderate-02: 240ms;
+            --cds-duration-slow-01: 400ms;
+            --cds-duration-slow-02: 700ms;
+            
+            /* Carbon Elevation */
+            --cds-shadow-01: 0 2px 6px rgba(0, 0, 0, 0.3);
+            --cds-shadow-02: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ============================================
+           BASE STYLES
+           ============================================ */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
-            color: #161616;
-            line-height: 1.6;
-            padding: 32px 16px;
+            background-color: var(--cds-gray-100);
+            color: var(--cds-text-primary);
+            line-height: 1.5;
+            padding: var(--cds-spacing-08) var(--cds-spacing-06);
+            min-height: 100vh;
         }
-
-        .container {
-            max-width: 1200px;
+        
+        /* ============================================
+           CARBON GRID SYSTEM
+           ============================================ */
+        
+        .cds-grid {
+            max-width: 1584px;
             margin: 0 auto;
+            padding: 0 var(--cds-spacing-06);
         }
-
-        /* Header Section */
+        
+        /* ============================================
+           HEADER SECTION
+           ============================================ */
+        
         .header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: var(--cds-spacing-10);
+            padding: var(--cds-spacing-08) 0;
         }
-
+        
         .header h1 {
-            font-size: 2.5rem;
+            font-size: var(--cds-productive-heading-06);
             font-weight: 300;
-            color: #161616;
-            margin-bottom: 16px;
+            color: var(--cds-text-primary);
+            margin-bottom: var(--cds-spacing-06);
+            letter-spacing: -0.02em;
         }
-
+        
         .header p {
-            font-size: 1.125rem;
-            color: #525252;
+            font-size: var(--cds-body-long-02);
+            color: var(--cds-text-secondary);
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.5;
         }
-
-        /* Poster Section */
+        
+        /* ============================================
+           CARBON CARD COMPONENT
+           ============================================ */
+        
+        .cds-card {
+            background-color: var(--cds-layer-01);
+            border: 1px solid var(--cds-border-subtle-01);
+            border-radius: 0;
+            margin-bottom: var(--cds-spacing-08);
+            transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
+        }
+        
+        .cds-card:hover {
+            box-shadow: var(--cds-shadow-02);
+        }
+        
+        /* ============================================
+           POSTER SECTION - CARBON STYLED
+           ============================================ */
+        
         .poster-section {
-            background: white;
-            border-radius: 8px;
-            padding: 48px;
-            margin-bottom: 48px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: var(--cds-spacing-10);
         }
-
+        
         .poster {
             max-width: 800px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #e8f5e9 0%, #b3e5fc 50%, #f3e5f5 100%);
-            border-radius: 12px;
-            padding: 64px 48px;
+            background: linear-gradient(135deg, var(--cds-gray-90) 0%, var(--cds-gray-80) 50%, var(--cds-gray-90) 100%);
+            border: 2px solid var(--cds-border-interactive);
+            padding: var(--cds-spacing-13) var(--cds-spacing-10);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-
+        
         .poster::before {
             content: '';
             position: absolute;
@@ -75,236 +193,436 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(15, 98, 254, 0.1) 0%, transparent 70%);
+            animation: carbonPulse 8s cubic-bezier(0.2, 0, 0.38, 0.9) infinite;
         }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+        
+        @keyframes carbonPulse {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 0.3; 
+            }
+            50% { 
+                transform: scale(1.1) rotate(180deg); 
+                opacity: 0.6; 
+            }
         }
-
+        
         .poster-content {
             position: relative;
             z-index: 1;
         }
-
+        
         .poster-title {
-            font-size: 3.5rem;
+            font-size: var(--cds-productive-heading-07);
             font-weight: 300;
-            color: #0f62fe;
-            margin-bottom: 24px;
+            color: var(--cds-blue-40);
+            margin-bottom: var(--cds-spacing-07);
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 8px rgba(15, 98, 254, 0.3);
         }
-
+        
         .poster-tagline {
-            font-size: 1.5rem;
+            font-size: var(--cds-productive-heading-04);
             font-weight: 400;
-            color: #161616;
-            margin-bottom: 32px;
+            color: var(--cds-text-primary);
+            margin-bottom: var(--cds-spacing-08);
             font-style: italic;
         }
-
+        
         .poster-message {
-            font-size: 1.25rem;
-            color: #525252;
-            margin-bottom: 48px;
+            font-size: var(--cds-productive-heading-03);
+            color: var(--cds-text-secondary);
+            margin-bottom: var(--cds-spacing-10);
+            font-weight: 300;
         }
-
+        
+        /* ============================================
+           WELLNESS ICONS - CARBON STYLED
+           ============================================ */
+        
         .wellness-icons {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin: 48px 0;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--cds-spacing-08);
+            margin: var(--cds-spacing-10) 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
+        
         .icon-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: var(--cds-spacing-05);
+            transition: transform var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
         }
-
+        
+        .icon-item:hover {
+            transform: translateY(-4px);
+        }
+        
         .icon-circle {
-            width: 64px;
-            height: 64px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.8);
+            background-color: var(--cds-layer-02);
+            border: 2px solid var(--cds-border-interactive);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 2.5rem;
+            box-shadow: var(--cds-shadow-01);
+            transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
         }
-
+        
+        .icon-item:hover .icon-circle {
+            background-color: var(--cds-layer-03);
+            box-shadow: 0 4px 12px rgba(15, 98, 254, 0.4);
+            border-color: var(--cds-blue-40);
+        }
+        
         .icon-label {
-            font-size: 0.875rem;
-            color: #525252;
+            font-size: var(--cds-label-01);
+            color: var(--cds-text-secondary);
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-
+        
         .poster-footer {
-            font-size: 0.875rem;
-            color: #8d8d8d;
-            margin-top: 48px;
+            font-size: var(--cds-helper-text-01);
+            color: var(--cds-text-placeholder);
+            margin-top: var(--cds-spacing-10);
             font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-
-        /* Feedback Section */
+        
+        /* ============================================
+           FEEDBACK SECTION - CARBON STYLED
+           ============================================ */
+        
         .feedback-section {
-            background: white;
-            border-radius: 8px;
-            padding: 48px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: var(--cds-spacing-10);
         }
-
+        
         .feedback-header {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: var(--cds-spacing-09);
         }
-
+        
         .feedback-header h2 {
-            font-size: 2rem;
+            font-size: var(--cds-productive-heading-05);
             font-weight: 400;
-            color: #161616;
-            margin-bottom: 16px;
+            color: var(--cds-text-primary);
+            margin-bottom: var(--cds-spacing-06);
         }
-
+        
         .feedback-header p {
-            font-size: 1rem;
-            color: #525252;
+            font-size: var(--cds-body-long-02);
+            color: var(--cds-text-secondary);
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.5;
         }
-
-        /* Monday.com Form Embed */
+        
+        /* ============================================
+           CARBON BUTTON COMPONENT
+           ============================================ */
+        
         .form-container {
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        .monday-form-embed {
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Fallback Button (if iframe doesn't work) */
-        .form-button {
-            display: inline-block;
-            padding: 16px 32px;
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: white;
-            background: #0f62fe;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
             text-align: center;
+            padding: var(--cds-spacing-10) var(--cds-spacing-08);
         }
-
-        .form-button:hover {
-            background: #0353e9;
-            box-shadow: 0 4px 12px rgba(15, 98, 254, 0.3);
+        
+        .cds-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--cds-spacing-05) var(--cds-spacing-10);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: var(--cds-body-short-02);
+            font-weight: 400;
+            color: var(--cds-text-on-color);
+            background-color: var(--cds-interactive-01);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--cds-duration-fast-02) cubic-bezier(0.2, 0, 0.38, 0.9);
+            min-height: 48px;
+            position: relative;
+            overflow: hidden;
         }
-
-        /* Privacy Notice */
-        .privacy-notice {
-            background: #f4f4f4;
-            border-left: 3px solid #0f62fe;
-            padding: 16px;
-            margin-top: 24px;
-            border-radius: 4px;
+        
+        .cds-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            transition: background-color var(--cds-duration-fast-02) cubic-bezier(0.2, 0, 0.38, 0.9);
         }
-
-        .privacy-notice p {
-            font-size: 0.875rem;
-            color: #525252;
+        
+        .cds-btn:hover {
+            background-color: var(--cds-blue-70);
+        }
+        
+        .cds-btn:hover::before {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cds-btn:active {
+            background-color: var(--cds-blue-70);
+        }
+        
+        .cds-btn:focus {
+            outline: 2px solid var(--cds-interactive-04);
+            outline-offset: 2px;
+        }
+        
+        .form-helper-text {
+            margin-top: var(--cds-spacing-06);
+            color: var(--cds-text-secondary);
+            font-size: var(--cds-helper-text-01);
+        }
+        
+        /* ============================================
+           CARBON NOTIFICATION COMPONENT
+           ============================================ */
+        
+        .cds-notification {
+            background-color: var(--cds-layer-02);
+            border-left: 3px solid var(--cds-border-interactive);
+            padding: var(--cds-spacing-06);
+            margin-top: var(--cds-spacing-07);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--cds-spacing-05);
+        }
+        
+        .cds-notification-icon {
+            color: var(--cds-blue-40);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .cds-notification-content {
+            flex: 1;
+        }
+        
+        .cds-notification-title {
+            font-size: var(--cds-body-short-02);
+            font-weight: 600;
+            color: var(--cds-text-primary);
+            margin-bottom: var(--cds-spacing-03);
+        }
+        
+        .cds-notification-text {
+            font-size: var(--cds-helper-text-01);
+            color: var(--cds-text-secondary);
             line-height: 1.5;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        
+        /* ============================================
+           STATISTICS SECTION - NEW
+           ============================================ */
+        
+        .stats-section {
+            padding: var(--cds-spacing-10);
+            margin-bottom: var(--cds-spacing-08);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--cds-spacing-06);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            background-color: var(--cds-layer-02);
+            border: 1px solid var(--cds-border-subtle-01);
+            padding: var(--cds-spacing-07);
+            text-align: center;
+            transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
+        }
+        
+        .stat-card:hover {
+            border-color: var(--cds-border-interactive);
+            box-shadow: var(--cds-shadow-01);
+        }
+        
+        .stat-number {
+            font-size: var(--cds-productive-heading-06);
+            font-weight: 300;
+            color: var(--cds-blue-40);
+            margin-bottom: var(--cds-spacing-04);
+        }
+        
+        .stat-label {
+            font-size: var(--cds-label-01);
+            color: var(--cds-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* ============================================
+           CARBON RESPONSIVE BREAKPOINTS
+           ============================================ */
+        
+        /* Small (sm): 320px - 671px */
+        @media (max-width: 671px) {
             body {
-                padding: 16px 8px;
+                padding: var(--cds-spacing-06) var(--cds-spacing-05);
             }
-
+            
             .header h1 {
+                font-size: var(--cds-productive-heading-05);
+            }
+            
+            .poster-section,
+            .feedback-section,
+            .stats-section {
+                padding: var(--cds-spacing-07);
+            }
+            
+            .poster {
+                padding: var(--cds-spacing-09) var(--cds-spacing-07);
+            }
+            
+            .poster-title {
+                font-size: var(--cds-productive-heading-05);
+            }
+            
+            .poster-tagline {
+                font-size: var(--cds-productive-heading-03);
+            }
+            
+            .poster-message {
+                font-size: var(--cds-body-long-02);
+            }
+            
+            .wellness-icons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--cds-spacing-06);
+            }
+            
+            .icon-circle {
+                width: 64px;
+                height: 64px;
                 font-size: 2rem;
             }
-
-            .poster-section,
-            .feedback-section {
-                padding: 24px;
-            }
-
-            .poster {
-                padding: 32px 24px;
-            }
-
-            .poster-title {
-                font-size: 2.5rem;
-            }
-
-            .poster-tagline {
-                font-size: 1.25rem;
-            }
-
-            .poster-message {
-                font-size: 1.125rem;
-            }
-
-            .wellness-icons {
-                gap: 16px;
-            }
-
-            .icon-circle {
-                width: 56px;
-                height: 56px;
-                font-size: 1.75rem;
-            }
-
+            
             .feedback-header h2 {
-                font-size: 1.5rem;
+                font-size: var(--cds-productive-heading-04);
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Medium (md): 672px - 1055px */
+        @media (min-width: 672px) and (max-width: 1055px) {
+            .cds-grid {
+                padding: 0 var(--cds-spacing-07);
+            }
+            
+            .wellness-icons {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Large (lg): 1056px - 1311px */
+        @media (min-width: 1056px) and (max-width: 1311px) {
+            .cds-grid {
+                padding: 0 var(--cds-spacing-08);
+            }
+        }
+        
+        /* X-Large (xl): 1312px - 1583px */
+        @media (min-width: 1312px) and (max-width: 1583px) {
+            .cds-grid {
+                padding: 0 var(--cds-spacing-09);
+            }
+        }
+        
+        /* Max: 1584px+ */
+        @media (min-width: 1584px) {
+            .cds-grid {
+                padding: 0;
+            }
+        }
+        
+        /* ============================================
+           ACCESSIBILITY ENHANCEMENTS
+           ============================================ */
+        
+        /* Focus visible for keyboard navigation */
+        *:focus-visible {
+            outline: 2px solid var(--cds-interactive-04);
+            outline-offset: 2px;
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .cds-card,
+            .poster,
+            .stat-card {
+                border-width: 2px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="cds-grid">
         <!-- Header -->
-        <div class="header">
+        <header class="header" role="banner">
             <h1>The Wellness Project</h1>
             <p>We're excited to share our new Team Wellbeing Initiative and would love to hear your thoughts!</p>
-        </div>
+        </header>
 
         <!-- Poster Section -->
-        <div class="poster-section">
+        <section class="cds-card poster-section" aria-labelledby="poster-title">
             <div class="poster">
                 <div class="poster-content">
-                    <h1 class="poster-title">The Wellness Project</h1>
+                    <h2 id="poster-title" class="poster-title">The Wellness Project</h2>
                     <p class="poster-tagline">Nurturing wellbeing, together</p>
                     <p class="poster-message">Watch this space for more updates</p>
                     
-                    <div class="wellness-icons">
-                        <div class="icon-item">
-                            <div class="icon-circle">🧘</div>
+                    <div class="wellness-icons" role="list" aria-label="Wellness focus areas">
+                        <div class="icon-item" role="listitem">
+                            <div class="icon-circle" aria-hidden="true">🧘</div>
                             <span class="icon-label">Mindfulness</span>
                         </div>
-                        <div class="icon-item">
-                            <div class="icon-circle">💪</div>
+                        <div class="icon-item" role="listitem">
+                            <div class="icon-circle" aria-hidden="true">💪</div>
                             <span class="icon-label">Fitness</span>
                         </div>
-                        <div class="icon-item">
-                            <div class="icon-circle">🤝</div>
+                        <div class="icon-item" role="listitem">
+                            <div class="icon-circle" aria-hidden="true">🤝</div>
                             <span class="icon-label">Community</span>
                         </div>
-                        <div class="icon-item">
-                            <div class="icon-circle">🌱</div>
+                        <div class="icon-item" role="listitem">
+                            <div class="icon-circle" aria-hidden="true">🌱</div>
                             <span class="icon-label">Growth</span>
                         </div>
                     </div>
@@ -312,33 +630,57 @@
                     <p class="poster-footer">ISDL Design and Content Team</p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="cds-card stats-section" aria-labelledby="stats-title">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Focus Areas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Team Focused</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
+            </div>
+        </section>
 
         <!-- Feedback Section -->
-        <div class="feedback-section">
+        <section class="cds-card feedback-section" aria-labelledby="feedback-title">
             <div class="feedback-header">
-                <h2>Share Your Ideas & Opinions</h2>
+                <h2 id="feedback-title">Share Your Ideas & Opinions</h2>
                 <p>Your feedback will help shape our Team Wellbeing Initiative. Please share your thoughts below.</p>
             </div>
 
             <div class="form-container">
-                <!-- Monday.com Form Button Link -->
-                <div style="text-align: center; padding: 48px 32px;">
-                    <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1"
-                       target="_blank"
-                       class="form-button">
-                        Open Feedback Form
-                    </a>
-                    <p style="margin-top: 16px; color: #525252; font-size: 0.875rem;">
-                        Click the button above to share your feedback in a new window
+                <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="cds-btn"
+                   role="button">
+                    Open Feedback Form
+                </a>
+                <p class="form-helper-text">
+                    Click the button above to share your feedback in a new window
+                </p>
+            </div>
+
+            <div class="cds-notification" role="status" aria-live="polite">
+                <span class="cds-notification-icon" aria-hidden="true">🔒</span>
+                <div class="cds-notification-content">
+                    <div class="cds-notification-title">Privacy Note</div>
+                    <p class="cds-notification-text">
+                        Your feedback is confidential and will only be used to improve our Team Wellbeing Initiative. 
+                        You can submit anonymously by leaving the name and email fields blank in the form.
                     </p>
                 </div>
             </div>
-
-            <div class="privacy-notice">
-                <p><strong>Privacy Note:</strong> Your feedback is confidential and will only be used to improve our Team Wellbeing Initiative. You can submit anonymously by leaving the name and email fields blank in the form.</p>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>
