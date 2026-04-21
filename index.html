@@ -1,504 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wellness Project - Team Wellbeing Initiative</title>
-    <meta name="description" content="Share your ideas and opinions about our Team Wellbeing Initiative">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* ============================================
-           CARBON DESIGN SYSTEM - DARK THEME
-           ============================================ */
-        
-        /* CSS Custom Properties - Carbon Tokens */
-        :root {
-            /* Carbon Color Tokens - Gray Scale */
-            --cds-gray-100: #161616;
-            --cds-gray-90: #262626;
-            --cds-gray-80: #393939;
-            --cds-gray-70: #525252;
-            --cds-gray-60: #6f6f6f;
-            --cds-gray-50: #8d8d8d;
-            --cds-gray-40: #a8a8a8;
-            --cds-gray-30: #c6c6c6;
-            --cds-gray-20: #e0e0e0;
-            --cds-gray-10: #f4f4f4;
-            
-            /* Carbon Blue Tokens */
-            --cds-blue-60: #0f62fe;
-            --cds-blue-70: #0043ce;
-            --cds-blue-50: #4589ff;
-            --cds-blue-40: #78a9ff;
-            --cds-blue-20: #d0e2ff;
-            
-            /* Carbon Layer Tokens */
-            --cds-layer-01: #262626;
-            --cds-layer-02: #393939;
-            --cds-layer-03: #525252;
-            
-            /* Carbon Text Tokens */
-            --cds-text-primary: #f4f4f4;
-            --cds-text-secondary: #c6c6c6;
-            --cds-text-placeholder: #6f6f6f;
-            --cds-text-on-color: #ffffff;
-            
-            /* Carbon Interactive Tokens */
-            --cds-interactive-01: #0f62fe;
-            --cds-interactive-04: #4589ff;
-            
-            /* Carbon Border Tokens */
-            --cds-border-subtle-01: #393939;
-            --cds-border-interactive: #0f62fe;
-            
-            /* Carbon Spacing Tokens (2px base grid) */
-            --cds-spacing-03: 0.25rem;   /* 4px */
-            --cds-spacing-04: 0.5rem;    /* 8px */
-            --cds-spacing-05: 0.75rem;   /* 12px */
-            --cds-spacing-06: 1rem;      /* 16px */
-            --cds-spacing-07: 1.5rem;    /* 24px */
-            --cds-spacing-08: 2rem;      /* 32px */
-            --cds-spacing-09: 2.5rem;    /* 40px */
-            --cds-spacing-10: 3rem;      /* 48px */
-            --cds-spacing-11: 4rem;      /* 64px */
-            --cds-spacing-12: 5rem;      /* 80px */
-            --cds-spacing-13: 6rem;      /* 96px */
-            
-            /* Carbon Type Scale */
-            --cds-productive-heading-07: 3.375rem;  /* 54px */
-            --cds-productive-heading-05: 2rem;      /* 32px */
-            --cds-productive-heading-04: 1.75rem;   /* 28px */
-            --cds-productive-heading-03: 1.25rem;   /* 20px */
-            --cds-body-long-02: 1rem;               /* 16px */
-            --cds-body-short-02: 1rem;              /* 16px */
-            --cds-label-01: 0.75rem;                /* 12px */
-            --cds-helper-text-01: 0.75rem;          /* 12px */
-            
-            /* Carbon Motion Tokens */
-            --cds-duration-fast-02: 110ms;
-            --cds-duration-moderate-01: 150ms;
-            
-            /* Carbon Elevation */
-            --cds-shadow-01: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* ============================================
-           BASE STYLES
-           ============================================ */
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: var(--cds-gray-100);
-            color: var(--cds-text-primary);
-            line-height: 1.5;
-            padding: var(--cds-spacing-10) var(--cds-spacing-06);
-            min-height: 100vh;
-        }
-        
-        /* ============================================
-           CARBON GRID SYSTEM
-           ============================================ */
-        
-        .cds-grid {
-            max-width: 1056px;
-            margin: 0 auto;
-            padding: 0 var(--cds-spacing-06);
-        }
-        
-        /* ============================================
-           HEADER SECTION
-           ============================================ */
-        
-        .header {
-            text-align: center;
-            margin-bottom: var(--cds-spacing-10);
-            padding: var(--cds-spacing-08) 0;
-        }
-        
-        .header h1 {
-            font-size: var(--cds-productive-heading-05);
-            font-weight: 300;
-            color: var(--cds-text-primary);
-            margin-bottom: var(--cds-spacing-06);
-            letter-spacing: -0.02em;
-        }
-        
-        .header p {
-            font-size: var(--cds-body-long-02);
-            color: var(--cds-text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-        
-        /* ============================================
-           IBM LOGO
-           ============================================ */
-        
-        .ibm-logo {
-            display: block;
-            margin: 0 auto var(--cds-spacing-08);
-            width: 80px;
-            height: auto;
-            filter: brightness(0) invert(1);
-        }
-        
-        /* ============================================
-           CARBON CARD COMPONENT
-           ============================================ */
-        
-        .cds-card {
-            background-color: var(--cds-layer-01);
-            border: 1px solid var(--cds-border-subtle-01);
-            margin-bottom: var(--cds-spacing-08);
-            padding: var(--cds-spacing-10);
-        }
-        
-        /* ============================================
-           HERO SECTION - SIMPLIFIED
-           ============================================ */
-        
-        .hero-section {
-            text-align: center;
-            padding: var(--cds-spacing-13) var(--cds-spacing-08);
-        }
-        
-        .hero-title {
-            font-size: var(--cds-productive-heading-07);
-            font-weight: 300;
-            color: var(--cds-blue-40);
-            margin-bottom: var(--cds-spacing-07);
-            letter-spacing: -0.02em;
-        }
-        
-        .hero-tagline {
-            font-size: var(--cds-productive-heading-04);
-            font-weight: 400;
-            color: var(--cds-text-primary);
-            margin-bottom: var(--cds-spacing-08);
-            font-style: italic;
-        }
-        
-        .hero-message {
-            font-size: var(--cds-productive-heading-03);
-            color: var(--cds-text-secondary);
-            margin-bottom: var(--cds-spacing-11);
-            font-weight: 300;
-        }
-        
-        /* ============================================
-           WELLNESS PILLARS - SIMPLIFIED
-           ============================================ */
-        
-        .wellness-pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: var(--cds-spacing-08);
-            max-width: 700px;
-            margin: 0 auto var(--cds-spacing-11);
-        }
-        
-        .pillar-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--cds-spacing-05);
-            transition: transform var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
-        }
-        
-        .pillar-item:hover {
-            transform: translateY(-4px);
-        }
-        
-        .pillar-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: var(--cds-layer-02);
-            border: 1px solid var(--cds-border-interactive);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
-        }
-        
-        .pillar-item:hover .pillar-icon {
-            background-color: var(--cds-layer-03);
-            border-color: var(--cds-blue-40);
-        }
-        
-        .pillar-label {
-            font-size: var(--cds-label-01);
-            color: var(--cds-text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .hero-footer {
-            font-size: var(--cds-helper-text-01);
-            color: var(--cds-text-placeholder);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        /* ============================================
-           FEEDBACK SECTION - SIMPLIFIED
-           ============================================ */
-        
-        .feedback-section {
-            text-align: center;
-            padding: var(--cds-spacing-10);
-        }
-        
-        .feedback-header h2 {
-            font-size: var(--cds-productive-heading-05);
-            font-weight: 400;
-            color: var(--cds-text-primary);
-            margin-bottom: var(--cds-spacing-06);
-        }
-        
-        .feedback-header p {
-            font-size: var(--cds-body-long-02);
-            color: var(--cds-text-secondary);
-            max-width: 600px;
-            margin: 0 auto var(--cds-spacing-10);
-            line-height: 1.5;
-        }
-        
-        /* ============================================
-           CARBON BUTTON COMPONENT
-           ============================================ */
-        
-        .cds-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--cds-spacing-05) var(--cds-spacing-10);
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: var(--cds-body-short-02);
-            font-weight: 400;
-            color: var(--cds-text-on-color);
-            background-color: var(--cds-interactive-01);
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--cds-duration-fast-02) cubic-bezier(0.2, 0, 0.38, 0.9);
-            min-height: 48px;
-        }
-        
-        .cds-btn:hover {
-            background-color: var(--cds-blue-70);
-        }
-        
-        .cds-btn:focus {
-            outline: 2px solid var(--cds-interactive-04);
-            outline-offset: 2px;
-        }
-        
-        .form-helper-text {
-            margin-top: var(--cds-spacing-06);
-            color: var(--cds-text-secondary);
-            font-size: var(--cds-helper-text-01);
-        }
-        
-        /* ============================================
-           CARBON NOTIFICATION COMPONENT
-           ============================================ */
-        
-        .cds-notification {
-            background-color: var(--cds-layer-02);
-            border-left: 3px solid var(--cds-border-interactive);
-            padding: var(--cds-spacing-06);
-            margin-top: var(--cds-spacing-09);
-            display: flex;
-            align-items: flex-start;
-            gap: var(--cds-spacing-05);
-            text-align: left;
-        }
-        
-        .cds-notification-icon {
-            color: var(--cds-blue-40);
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-        
-        .cds-notification-content {
-            flex: 1;
-        }
-        
-        .cds-notification-title {
-            font-size: var(--cds-body-short-02);
-            font-weight: 600;
-            color: var(--cds-text-primary);
-            margin-bottom: var(--cds-spacing-03);
-        }
-        
-        .cds-notification-text {
-            font-size: var(--cds-helper-text-01);
-            color: var(--cds-text-secondary);
-            line-height: 1.5;
-        }
-        
-        /* ============================================
-           CARBON RESPONSIVE BREAKPOINTS
-           ============================================ */
-        
-        /* Small (sm): 320px - 671px */
-        @media (max-width: 671px) {
-            body {
-                padding: var(--cds-spacing-08) var(--cds-spacing-05);
-            }
-            
-            .header h1 {
-                font-size: var(--cds-productive-heading-04);
-            }
-            
-            .hero-section,
-            .feedback-section {
-                padding: var(--cds-spacing-09) var(--cds-spacing-06);
-            }
-            
-            .hero-title {
-                font-size: var(--cds-productive-heading-05);
-            }
-            
-            .hero-tagline {
-                font-size: var(--cds-productive-heading-03);
-            }
-            
-            .hero-message {
-                font-size: var(--cds-body-long-02);
-            }
-            
-            .wellness-pillars {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--cds-spacing-07);
-            }
-            
-            .pillar-icon {
-                width: 64px;
-                height: 64px;
-                font-size: 2rem;
-            }
-            
-            .feedback-header h2 {
-                font-size: var(--cds-productive-heading-04);
-            }
-        }
-        
-        /* Medium (md): 672px - 1055px */
-        @media (min-width: 672px) and (max-width: 1055px) {
-            .wellness-pillars {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        /* ============================================
-           ACCESSIBILITY ENHANCEMENTS
-           ============================================ */
-        
-        /* Focus visible for keyboard navigation */
-        *:focus-visible {
-            outline: 2px solid var(--cds-interactive-04);
-            outline-offset: 2px;
-        }
-        
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .cds-card,
-            .pillar-icon {
-                border-width: 2px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Wellness Project — ISDL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ------------------------------------------------------------------
+     IBM Carbon Design System — Wellness Project (simplified)
+  ------------------------------------------------------------------ */
+  :root {
+    --background: #f4f4f4;
+    --background-inverse: #161616;
+    --layer-01: #ffffff;
+    --border-subtle: #e0e0e0;
+    --border-strong: #8d8d8d;
+    --text-primary: #161616;
+    --text-secondary: #525252;
+    --text-on-color: #ffffff;
+    --text-helper: #6f6f6f;
+
+    --blue-40: #78a9ff;
+    --blue-60: #0f62fe;
+    --blue-70: #0043ce;
+
+    --grid-gutter: 32px;
+    --grid-margin: 24px;
+
+    --spacing-03: 8px;
+    --spacing-04: 12px;
+    --spacing-05: 16px;
+    --spacing-06: 24px;
+    --spacing-07: 32px;
+    --spacing-09: 48px;
+    --spacing-10: 64px;
+    --spacing-11: 80px;
+    --spacing-12: 96px;
+
+    --duration-fast: 110ms;
+    --duration-moderate: 240ms;
+    --easing-productive: cubic-bezier(0.2, 0, 0.38, 0.9);
+    --easing-entrance: cubic-bezier(0, 0, 0.38, 0.9);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--text-primary);
+    background: var(--background);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* ==============================================================
+     UI SHELL — Slim top bar
+     ============================================================== */
+  .ui-shell {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: var(--background-inverse);
+    color: var(--text-on-color);
+    display: flex;
+    align-items: center;
+    z-index: 8000;
+    border-bottom: 1px solid #393939;
+    padding: 0 var(--spacing-05);
+  }
+
+  .shell-logo {
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  .shell-wordmark {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.16px;
+    color: #c6c6c6;
+  }
+
+  .shell-wordmark strong {
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .shell-divider {
+    color: #6f6f6f;
+    font-weight: 300;
+    margin: 0 var(--spacing-03);
+  }
+
+  .shell-product {
+    font-size: 14px;
+    font-weight: 400;
+    color: #c6c6c6;
+  }
+
+  /* ==============================================================
+     HERO
+     ============================================================== */
+  .hero {
+    margin-top: 48px;
+    background: var(--background-inverse);
+    color: var(--text-on-color);
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 48px);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .hero-grid-marker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 49.6%, rgba(15,98,254,0.12) 49.8%, rgba(15,98,254,0.12) 50.2%, transparent 50.4%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: 1584px;
+    margin: 0 auto;
+    padding: var(--spacing-09) var(--grid-margin);
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 0 var(--grid-gutter);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content {
+    grid-column: 1 / 13;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-04);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+    color: var(--blue-40);
+    margin-bottom: var(--spacing-07);
+  }
+
+  .hero-eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--blue-60);
+    display: inline-block;
+    animation: pulse 2s var(--easing-productive) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  .hero-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(48px, 8.5vw, 128px);
+    line-height: 1.0;
+    letter-spacing: -0.96px;
+    margin-bottom: var(--spacing-07);
+  }
+
+  .hero-title em {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blue-40);
+  }
+
+  .hero-lede {
+    grid-column: 1 / 10;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.375;
+    color: #c6c6c6;
+    max-width: 720px;
+    margin-bottom: var(--spacing-11);
+  }
+
+  .hero-pillars {
+    grid-column: 1 / 17;
+    border-top: 1px solid #393939;
+    padding-top: var(--spacing-06);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #393939;
+  }
+
+  .pillar {
+    background: #161616;
+    padding: var(--spacing-06) var(--spacing-05);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-05);
+    transition: background var(--duration-moderate) var(--easing-productive);
+    position: relative;
+    min-height: 180px;
+  }
+
+  .pillar:hover {
+    background: #262626;
+  }
+
+  .pillar-index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #6f6f6f;
+    letter-spacing: 0.32px;
+  }
+
+  .pillar-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--blue-40);
+  }
+
+  .pillar-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: auto;
+  }
+
+  .pillar-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: #a8a8a8;
+    line-height: 1.4;
+  }
+
+  /* ==============================================================
+     VISION STATEMENT
+     ============================================================== */
+  .section {
+    padding: var(--spacing-12) var(--grid-margin);
+    max-width: 1584px;
+    margin: 0 auto;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 0 var(--grid-gutter);
+  }
+
+  .section-number {
+    grid-column: 1 / 4;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-strong);
+    padding-top: var(--spacing-05);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-03);
+  }
+
+  .section-number-label {
+    font-size: 12px;
+    color: var(--text-helper);
+  }
+
+  .section-heading {
+    grid-column: 5 / 14;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -0.32px;
+    border-top: 1px solid var(--border-strong);
+    padding-top: var(--spacing-05);
+  }
+
+  .section-heading em {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    color: var(--blue-60);
+  }
+
+  /* ==============================================================
+     ENGAGE / STAY TUNED
+     ============================================================== */
+  .engage-section {
+    background: var(--background-inverse);
+    color: var(--text-on-color);
+    padding: var(--spacing-12) var(--grid-margin);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .engage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(15,98,254,0.15) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .engage-inner {
+    max-width: 1584px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 0 var(--grid-gutter);
+    position: relative;
+    z-index: 2;
+  }
+
+  .engage-label {
+    grid-column: 1 / 4;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #78a9ff;
+    border-top: 1px solid #393939;
+    padding-top: var(--spacing-05);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-03);
+  }
+
+  .engage-content {
+    grid-column: 5 / 14;
+    border-top: 1px solid #393939;
+    padding-top: var(--spacing-05);
+  }
+
+  .engage-heading {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -0.64px;
+    margin-bottom: var(--spacing-07);
+    color: #ffffff;
+  }
+
+  .engage-heading em {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    color: var(--blue-40);
+  }
+
+  .engage-body {
+    font-size: 18px;
+    color: #c6c6c6;
+    line-height: 1.5;
+    max-width: 640px;
+    margin-bottom: var(--spacing-09);
+  }
+
+  /* ==============================================================
+     CARBON BUTTON — Productive default (48px)
+     Carbon spec: height 48px, 16px label, 16px horizontal padding,
+     15px right padding when icon present, 32px gap before icon.
+     ============================================================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+    height: 48px;
+    padding: 0 15px 0 var(--spacing-05);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28572;
+    letter-spacing: 0.16px;
+    border: 1px solid transparent;
+    transition: background var(--duration-fast) var(--easing-productive),
+                border-color var(--duration-fast) var(--easing-productive);
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--blue-60);
+    color: #ffffff;
+  }
+  .btn-primary:hover { background: var(--blue-70); }
+  .btn-primary:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: -4px;
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: var(--spacing-07);
+    flex-shrink: 0;
+    transition: transform var(--duration-moderate) var(--easing-productive);
+  }
+
+  .btn:hover .btn-icon { transform: translateX(4px); }
+
+  .hero-cta {
+    grid-column: 1 / 13;
+    margin-bottom: var(--spacing-11);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-05);
+  }
+
+  .hero-cta-hint {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #8d8d8d;
+    letter-spacing: 0.32px;
+  }
+
+  /* ==============================================================
+     FOOTER — just attribution
+     ============================================================== */
+  footer {
+    background: var(--layer-01);
+    border-top: 1px solid var(--border-subtle);
+    padding: var(--spacing-10) var(--grid-margin);
+  }
+
+  .footer-inner {
+    max-width: 1584px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 0 var(--grid-gutter);
+    align-items: center;
+  }
+
+  .footer-label {
+    grid-column: 1 / 5;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+  }
+
+  .footer-team {
+    grid-column: 5 / 17;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.16px;
+    color: var(--text-primary);
+  }
+
+  .footer-disclosure {
+    grid-column: 1 / 17;
+    margin-top: var(--spacing-07);
+    padding-top: var(--spacing-05);
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-04);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-helper);
+    letter-spacing: 0.32px;
+  }
+
+  .footer-disclosure-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .footer-disclosure-divider {
+    color: var(--border-strong);
+  }
+
+  /* ==============================================================
+     REVEAL ANIMATIONS
+     ============================================================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 800ms var(--easing-entrance),
+                transform 800ms var(--easing-entrance);
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-eyebrow { animation: slideIn 700ms var(--easing-entrance) both; }
+  .hero-title { animation: slideIn 800ms 100ms var(--easing-entrance) both; }
+  .hero-lede { animation: slideIn 800ms 200ms var(--easing-entrance) both; }
+  .pillar { animation: slideIn 700ms var(--easing-entrance) both; }
+  .pillar:nth-child(1) { animation-delay: 300ms; }
+  .pillar:nth-child(2) { animation-delay: 400ms; }
+  .pillar:nth-child(3) { animation-delay: 500ms; }
+  .pillar:nth-child(4) { animation-delay: 600ms; }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ==============================================================
+     RESPONSIVE
+     ============================================================== */
+  @media (max-width: 1056px) {
+    .hero-pillars { grid-template-columns: repeat(2, 1fr); }
+    .hero-content, .hero-lede, .hero-cta { grid-column: 1 / 17; }
+    .section-number, .section-heading,
+    .engage-label, .engage-content,
+    .footer-label, .footer-team, .footer-disclosure { grid-column: 1 / 17; }
+    .section-heading, .engage-content, .footer-team { margin-top: var(--spacing-05); }
+  }
+
+  @media (max-width: 672px) {
+    .hero-pillars { grid-template-columns: 1fr; }
+    .section { padding: var(--spacing-10) var(--grid-margin); }
+    .engage-section { padding: var(--spacing-10) var(--grid-margin); }
+    .btn { width: 100%; justify-content: space-between; }
+    .footer-disclosure { flex-wrap: wrap; }
+  }
+</style>
 </head>
 <body>
-    <div class="cds-grid">
-        <!-- Header Section -->
-        <header class="header" role="banner">
-            <img src="assets/ibm-logo.svg" alt="IBM" class="ibm-logo">
-            <h1>The Wellness Project</h1>
-            <p>We're excited to share our new Team Wellbeing Initiative and would love to hear your thoughts!</p>
-        </header>
 
-        <!-- Hero Section -->
-        <section class="cds-card hero-section" aria-labelledby="hero-title">
-            <h1 id="hero-title" class="hero-title">The Wellness Project</h1>
-            <p class="hero-tagline">Nurturing wellbeing, together</p>
-            <p class="hero-message">Watch this space for more updates</p>
-            
-            <div class="wellness-pillars" role="list" aria-label="Wellness focus areas">
-                <div class="pillar-item" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">🧘</div>
-                    <span class="pillar-label">Mindfulness</span>
-                </div>
-                <div class="pillar-item" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">💪</div>
-                    <span class="pillar-label">Fitness</span>
-                </div>
-                <div class="pillar-item" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">🤝</div>
-                    <span class="pillar-label">Community</span>
-                </div>
-                <div class="pillar-item" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">🌱</div>
-                    <span class="pillar-label">Growth</span>
-                </div>
-            </div>
-            
-            <p class="hero-footer">ISDL Design and Content Team</p>
-        </section>
+<!-- ============================================================
+     UI SHELL
+     ============================================================ -->
+<header class="ui-shell" role="banner">
+  <div class="shell-logo">
+    <span class="shell-wordmark"><strong>ISDL</strong> Design &amp; Content Team</span>
+  </div>
+  <span class="shell-divider">/</span>
+  <span class="shell-product">The Wellness Project</span>
+</header>
 
-        <!-- Feedback Section -->
-        <section class="cds-card feedback-section" aria-labelledby="feedback-title">
-            <div class="feedback-header">
-                <h2 id="feedback-title">Share Your Ideas & Opinions</h2>
-                <p>Your feedback will help shape our Team Wellbeing Initiative. Please share your thoughts below.</p>
-            </div>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="hero-grid-marker" aria-hidden="true"></div>
+  <div class="hero-inner">
 
-            <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="cds-btn"
-               role="button">
-                Open Feedback Form
-            </a>
-            <p class="form-helper-text">
-                Click the button above to share your feedback in a new window
-            </p>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span>An Initiative</span>
+      </div>
 
-            <div class="cds-notification" role="status" aria-live="polite">
-                <span class="cds-notification-icon" aria-hidden="true">🔒</span>
-                <div class="cds-notification-content">
-                    <div class="cds-notification-title">Privacy Note</div>
-                    <p class="cds-notification-text">
-                        Your feedback is confidential and will only be used to improve our Team Wellbeing Initiative. 
-                        You can submit anonymously by leaving the name and email fields blank in the form.
-                    </p>
-                </div>
-            </div>
-        </section>
+      <h1 class="hero-title">
+        The Wellness<br/>
+        <em>Project.</em>
+      </h1>
     </div>
+
+    <p class="hero-lede">
+      Nurturing wellbeing, empowering teams, and building resilience.
+    </p>
+
+    <div class="hero-cta">
+      <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1" target="_blank" rel="noopener" class="btn btn-primary">
+        <span>Share your ideas</span>
+        <!-- Carbon icon: arrow-right -->
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M18,6l-1.43,1.393L24.15,15H4v2H24.15l-7.58,7.573L18,26,28,16Z"/>
+        </svg>
+      </a>
+      <span class="hero-cta-hint">Every voice matters · Share as much or as little as you'd like</span>
+    </div>
+
+    <div class="hero-pillars">
+      <div class="pillar">
+        <span class="pillar-index">01 / MIND</span>
+        <!-- Carbon icon: meditate -->
+        <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <circle cx="16" cy="5" r="3"/>
+          <path d="M30,17H22.618L20.447,12.658A3.0354,3.0354,0,0,0,17.7271,11H14.2729a3.0354,3.0354,0,0,0-2.72,1.6577L9.382,17H2v2H9.382l1.5527-3.1045.0029.0015L8.5947,22.7612A2.0032,2.0032,0,0,0,10.5918,25H13v5h2V23H17v7h2V25h2.4082a2.0032,2.0032,0,0,0,1.9971-2.2388l-2.3439-5.8632.0029-.0015L22.618,19H30ZM21.4082,23H10.5918l2.7612-6.9033A1.0117,1.0117,0,0,1,14.2729,15H17.7271a1.0117,1.0117,0,0,1,.9053.5435Z"/>
+        </svg>
+        <div class="pillar-title">Mindfulness</div>
+        <div class="pillar-description">Reflection, clarity, and mental wellbeing.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-index">02 / BODY</span>
+        <!-- Carbon icon: running -->
+        <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <circle cx="20" cy="5" r="3"/>
+          <path d="M29.0137,13.1025l-7-3a.9986.9986,0,0,0-.7207-.04l-8,2.7778a1,1,0,0,0-.5947.5175L9.106,21H2v2H9.7549a1,1,0,0,0,.9111-.5854l3.3325-7.3315L16.4644,14.23l-3.3506,5.2583a1,1,0,0,0,.0205,1.1133l5.1231,7.2529L14.1162,30,15,31.8174l5.5264-2.6885a1,1,0,0,0,.3789-1.47l-5.272-7.4628,4.3355-6.8028,1.5118,3.0238A1,1,0,0,0,22.3945,17H28V15H23.0122l-1.541-3.082,6.7661,2.8994Z"/>
+        </svg>
+        <div class="pillar-title">Fitness</div>
+        <div class="pillar-description">Movement and active living, built in.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-index">03 / BELONGING</span>
+        <!-- Carbon icon: events -->
+        <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M24,18a4,4,0,1,1,4-4A4,4,0,0,1,24,18Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,24,12Z"/>
+          <path d="M28,29H26V25a2.0023,2.0023,0,0,0-2-2H20V21h4a4.0045,4.0045,0,0,1,4,4Z"/>
+          <path d="M8,18a4,4,0,1,1,4-4A4,4,0,0,1,8,18Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,8,12Z"/>
+          <path d="M6,29H4V25a4.0045,4.0045,0,0,1,4-4h4v2H8a2.0023,2.0023,0,0,0-2,2Z"/>
+          <path d="M16,16a5,5,0,1,1,5-5A5.0059,5.0059,0,0,1,16,16Zm0-8a3,3,0,1,0,3,3A3.0033,3.0033,0,0,0,16,8Z"/>
+          <path d="M22,29H20V25a2.0023,2.0023,0,0,0-2-2H14a2.0023,2.0023,0,0,0-2,2v4H10V25a4.0045,4.0045,0,0,1,4-4h4a4.0045,4.0045,0,0,1,4,4Z"/>
+        </svg>
+        <div class="pillar-title">Community</div>
+        <div class="pillar-description">Shared rituals and genuine connection.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-index">04 / GROWTH</span>
+        <!-- Carbon icon: growth -->
+        <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M30,30H4V2H2V30a2,2,0,0,0,2,2H30Z"/>
+          <path d="M30,9H23V11h3.59L21,16.59l-4-4L8,21.59,9.41,23,17,15.41l4,4L28,12.41V16h2Z"/>
+        </svg>
+        <div class="pillar-title">Growth</div>
+        <div class="pillar-description">Room to learn and move forward.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VISION
+     ============================================================ -->
+<section class="section reveal">
+  <div class="section-grid">
+    <div class="section-number">
+      <span>The Vision</span>
+    </div>
+    <h2 class="section-heading">
+      Wellbeing isn't a perk — it's the <em>foundation</em> on which good work, clear thinking and genuine connection are built.
+    </h2>
+  </div>
+</section>
+
+<!-- ============================================================
+     ENGAGE / STAY TUNED
+     ============================================================ -->
+<section class="engage-section">
+  <div class="engage-inner">
+    <div class="engage-label">
+      <span>Ideas &amp; Feedback</span>
+    </div>
+
+    <div class="engage-content">
+      <h2 class="engage-heading">
+        We'd love to hear <em>from you.</em>
+      </h2>
+      <p class="engage-body">
+        This initiative is being shaped by the team, for the team. Bring your ideas,
+        suggestions, or thoughts on how we can make wellbeing part of how we work —
+        everything is welcome, nothing is too small.
+      </p>
+
+      <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1" target="_blank" rel="noopener" class="btn btn-primary">
+        <span>Share ideas</span>
+        <!-- Carbon icon: launch -->
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"/>
+          <path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-label">Stewarded by</span>
+    <h3 class="footer-team">ISDL Design &amp; Content Team</h3>
+
+    <div class="footer-disclosure">
+      <!-- Carbon icon: information -->
+      <svg class="footer-disclosure-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M17,22V14H13v2h2v6H12v2h8V22ZM16,8a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,8Z"/>
+        <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"/>
+      </svg>
+      <span>For internal use only</span>
+      <span class="footer-disclosure-divider">·</span>
+      <span>Not an official IBM communication</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
