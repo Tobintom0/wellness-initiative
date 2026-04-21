@@ -38,28 +38,22 @@
             --cds-layer-01: #262626;
             --cds-layer-02: #393939;
             --cds-layer-03: #525252;
-            --cds-layer-accent-01: #393939;
             
             /* Carbon Text Tokens */
             --cds-text-primary: #f4f4f4;
             --cds-text-secondary: #c6c6c6;
             --cds-text-placeholder: #6f6f6f;
             --cds-text-on-color: #ffffff;
-            --cds-text-inverse: #161616;
             
             /* Carbon Interactive Tokens */
             --cds-interactive-01: #0f62fe;
-            --cds-interactive-02: #393939;
-            --cds-interactive-03: #0f62fe;
             --cds-interactive-04: #4589ff;
             
             /* Carbon Border Tokens */
             --cds-border-subtle-01: #393939;
-            --cds-border-strong-01: #6f6f6f;
             --cds-border-interactive: #0f62fe;
             
             /* Carbon Spacing Tokens (2px base grid) */
-            --cds-spacing-02: 0.125rem;  /* 2px */
             --cds-spacing-03: 0.25rem;   /* 4px */
             --cds-spacing-04: 0.5rem;    /* 8px */
             --cds-spacing-05: 0.75rem;   /* 12px */
@@ -74,7 +68,6 @@
             
             /* Carbon Type Scale */
             --cds-productive-heading-07: 3.375rem;  /* 54px */
-            --cds-productive-heading-06: 2.625rem;  /* 42px */
             --cds-productive-heading-05: 2rem;      /* 32px */
             --cds-productive-heading-04: 1.75rem;   /* 28px */
             --cds-productive-heading-03: 1.25rem;   /* 20px */
@@ -84,16 +77,11 @@
             --cds-helper-text-01: 0.75rem;          /* 12px */
             
             /* Carbon Motion Tokens */
-            --cds-duration-fast-01: 70ms;
             --cds-duration-fast-02: 110ms;
             --cds-duration-moderate-01: 150ms;
-            --cds-duration-moderate-02: 240ms;
-            --cds-duration-slow-01: 400ms;
-            --cds-duration-slow-02: 700ms;
             
             /* Carbon Elevation */
             --cds-shadow-01: 0 2px 6px rgba(0, 0, 0, 0.3);
-            --cds-shadow-02: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         /* ============================================
@@ -111,7 +99,7 @@
             background-color: var(--cds-gray-100);
             color: var(--cds-text-primary);
             line-height: 1.5;
-            padding: var(--cds-spacing-08) var(--cds-spacing-06);
+            padding: var(--cds-spacing-10) var(--cds-spacing-06);
             min-height: 100vh;
         }
         
@@ -120,35 +108,8 @@
            ============================================ */
         
         .cds-grid {
-            max-width: 1584px;
+            max-width: 1056px;
             margin: 0 auto;
-            padding: 0 var(--cds-spacing-06);
-        }
-        
-        /* ============================================
-           HEADER SECTION
-           ============================================ */
-        
-        .header {
-            text-align: center;
-            margin-bottom: var(--cds-spacing-10);
-            padding: var(--cds-spacing-08) 0;
-        }
-        
-        .header h1 {
-            font-size: var(--cds-productive-heading-06);
-            font-weight: 300;
-            color: var(--cds-text-primary);
-            margin-bottom: var(--cds-spacing-06);
-            letter-spacing: -0.02em;
-        }
-        
-        .header p {
-            font-size: var(--cds-body-long-02);
-            color: var(--cds-text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
         }
         
         /* ============================================
@@ -158,71 +119,28 @@
         .cds-card {
             background-color: var(--cds-layer-01);
             border: 1px solid var(--cds-border-subtle-01);
-            border-radius: 0;
             margin-bottom: var(--cds-spacing-08);
-            transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
-        }
-        
-        .cds-card:hover {
-            box-shadow: var(--cds-shadow-02);
-        }
-        
-        /* ============================================
-           POSTER SECTION - CARBON STYLED
-           ============================================ */
-        
-        .poster-section {
             padding: var(--cds-spacing-10);
         }
         
-        .poster {
-            max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--cds-gray-90) 0%, var(--cds-gray-80) 50%, var(--cds-gray-90) 100%);
-            border: 2px solid var(--cds-border-interactive);
-            padding: var(--cds-spacing-13) var(--cds-spacing-10);
+        /* ============================================
+           HERO SECTION - SIMPLIFIED
+           ============================================ */
+        
+        .hero-section {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: var(--cds-spacing-13) var(--cds-spacing-08);
         }
         
-        .poster::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(15, 98, 254, 0.1) 0%, transparent 70%);
-            animation: carbonPulse 8s cubic-bezier(0.2, 0, 0.38, 0.9) infinite;
-        }
-        
-        @keyframes carbonPulse {
-            0%, 100% { 
-                transform: scale(1) rotate(0deg); 
-                opacity: 0.3; 
-            }
-            50% { 
-                transform: scale(1.1) rotate(180deg); 
-                opacity: 0.6; 
-            }
-        }
-        
-        .poster-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .poster-title {
+        .hero-title {
             font-size: var(--cds-productive-heading-07);
             font-weight: 300;
             color: var(--cds-blue-40);
             margin-bottom: var(--cds-spacing-07);
             letter-spacing: -0.02em;
-            text-shadow: 0 2px 8px rgba(15, 98, 254, 0.3);
         }
         
-        .poster-tagline {
+        .hero-tagline {
             font-size: var(--cds-productive-heading-04);
             font-weight: 400;
             color: var(--cds-text-primary);
@@ -230,28 +148,26 @@
             font-style: italic;
         }
         
-        .poster-message {
+        .hero-message {
             font-size: var(--cds-productive-heading-03);
             color: var(--cds-text-secondary);
-            margin-bottom: var(--cds-spacing-10);
+            margin-bottom: var(--cds-spacing-11);
             font-weight: 300;
         }
         
         /* ============================================
-           WELLNESS ICONS - CARBON STYLED
+           WELLNESS PILLARS - SIMPLIFIED
            ============================================ */
         
-        .wellness-icons {
+        .wellness-pillars {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: var(--cds-spacing-08);
-            margin: var(--cds-spacing-10) 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto var(--cds-spacing-11);
         }
         
-        .icon-item {
+        .pillar-item {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -259,31 +175,29 @@
             transition: transform var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
         }
         
-        .icon-item:hover {
+        .pillar-item:hover {
             transform: translateY(-4px);
         }
         
-        .icon-circle {
+        .pillar-icon {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             background-color: var(--cds-layer-02);
-            border: 2px solid var(--cds-border-interactive);
+            border: 1px solid var(--cds-border-interactive);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
-            box-shadow: var(--cds-shadow-01);
             transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
         }
         
-        .icon-item:hover .icon-circle {
+        .pillar-item:hover .pillar-icon {
             background-color: var(--cds-layer-03);
-            box-shadow: 0 4px 12px rgba(15, 98, 254, 0.4);
             border-color: var(--cds-blue-40);
         }
         
-        .icon-label {
+        .pillar-label {
             font-size: var(--cds-label-01);
             color: var(--cds-text-secondary);
             font-weight: 500;
@@ -291,26 +205,20 @@
             letter-spacing: 0.05em;
         }
         
-        .poster-footer {
+        .hero-footer {
             font-size: var(--cds-helper-text-01);
             color: var(--cds-text-placeholder);
-            margin-top: var(--cds-spacing-10);
-            font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
         
         /* ============================================
-           FEEDBACK SECTION - CARBON STYLED
+           FEEDBACK SECTION - SIMPLIFIED
            ============================================ */
         
         .feedback-section {
-            padding: var(--cds-spacing-10);
-        }
-        
-        .feedback-header {
             text-align: center;
-            margin-bottom: var(--cds-spacing-09);
+            padding: var(--cds-spacing-10);
         }
         
         .feedback-header h2 {
@@ -324,20 +232,13 @@
             font-size: var(--cds-body-long-02);
             color: var(--cds-text-secondary);
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto var(--cds-spacing-10);
             line-height: 1.5;
         }
         
         /* ============================================
            CARBON BUTTON COMPONENT
            ============================================ */
-        
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: var(--cds-spacing-10) var(--cds-spacing-08);
-        }
         
         .cds-btn {
             display: inline-flex;
@@ -354,30 +255,9 @@
             text-decoration: none;
             transition: all var(--cds-duration-fast-02) cubic-bezier(0.2, 0, 0.38, 0.9);
             min-height: 48px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cds-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0);
-            transition: background-color var(--cds-duration-fast-02) cubic-bezier(0.2, 0, 0.38, 0.9);
         }
         
         .cds-btn:hover {
-            background-color: var(--cds-blue-70);
-        }
-        
-        .cds-btn:hover::before {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .cds-btn:active {
             background-color: var(--cds-blue-70);
         }
         
@@ -400,10 +280,11 @@
             background-color: var(--cds-layer-02);
             border-left: 3px solid var(--cds-border-interactive);
             padding: var(--cds-spacing-06);
-            margin-top: var(--cds-spacing-07);
+            margin-top: var(--cds-spacing-09);
             display: flex;
             align-items: flex-start;
             gap: var(--cds-spacing-05);
+            text-align: left;
         }
         
         .cds-notification-icon {
@@ -430,91 +311,38 @@
         }
         
         /* ============================================
-           STATISTICS SECTION - NEW
-           ============================================ */
-        
-        .stats-section {
-            padding: var(--cds-spacing-10);
-            margin-bottom: var(--cds-spacing-08);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--cds-spacing-06);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .stat-card {
-            background-color: var(--cds-layer-02);
-            border: 1px solid var(--cds-border-subtle-01);
-            padding: var(--cds-spacing-07);
-            text-align: center;
-            transition: all var(--cds-duration-moderate-01) cubic-bezier(0.2, 0, 0.38, 0.9);
-        }
-        
-        .stat-card:hover {
-            border-color: var(--cds-border-interactive);
-            box-shadow: var(--cds-shadow-01);
-        }
-        
-        .stat-number {
-            font-size: var(--cds-productive-heading-06);
-            font-weight: 300;
-            color: var(--cds-blue-40);
-            margin-bottom: var(--cds-spacing-04);
-        }
-        
-        .stat-label {
-            font-size: var(--cds-label-01);
-            color: var(--cds-text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        /* ============================================
            CARBON RESPONSIVE BREAKPOINTS
            ============================================ */
         
         /* Small (sm): 320px - 671px */
         @media (max-width: 671px) {
             body {
-                padding: var(--cds-spacing-06) var(--cds-spacing-05);
+                padding: var(--cds-spacing-08) var(--cds-spacing-05);
             }
             
-            .header h1 {
+            .hero-section,
+            .feedback-section {
+                padding: var(--cds-spacing-09) var(--cds-spacing-06);
+            }
+            
+            .hero-title {
                 font-size: var(--cds-productive-heading-05);
             }
             
-            .poster-section,
-            .feedback-section,
-            .stats-section {
-                padding: var(--cds-spacing-07);
-            }
-            
-            .poster {
-                padding: var(--cds-spacing-09) var(--cds-spacing-07);
-            }
-            
-            .poster-title {
-                font-size: var(--cds-productive-heading-05);
-            }
-            
-            .poster-tagline {
+            .hero-tagline {
                 font-size: var(--cds-productive-heading-03);
             }
             
-            .poster-message {
+            .hero-message {
                 font-size: var(--cds-body-long-02);
             }
             
-            .wellness-icons {
+            .wellness-pillars {
                 grid-template-columns: repeat(2, 1fr);
-                gap: var(--cds-spacing-06);
+                gap: var(--cds-spacing-07);
             }
             
-            .icon-circle {
+            .pillar-icon {
                 width: 64px;
                 height: 64px;
                 font-size: 2rem;
@@ -523,41 +351,12 @@
             .feedback-header h2 {
                 font-size: var(--cds-productive-heading-04);
             }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
         }
         
         /* Medium (md): 672px - 1055px */
         @media (min-width: 672px) and (max-width: 1055px) {
-            .cds-grid {
-                padding: 0 var(--cds-spacing-07);
-            }
-            
-            .wellness-icons {
+            .wellness-pillars {
                 grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        /* Large (lg): 1056px - 1311px */
-        @media (min-width: 1056px) and (max-width: 1311px) {
-            .cds-grid {
-                padding: 0 var(--cds-spacing-08);
-            }
-        }
-        
-        /* X-Large (xl): 1312px - 1583px */
-        @media (min-width: 1312px) and (max-width: 1583px) {
-            .cds-grid {
-                padding: 0 var(--cds-spacing-09);
-            }
-        }
-        
-        /* Max: 1584px+ */
-        @media (min-width: 1584px) {
-            .cds-grid {
-                padding: 0;
             }
         }
         
@@ -585,8 +384,7 @@
         /* High contrast mode support */
         @media (prefers-contrast: high) {
             .cds-card,
-            .poster,
-            .stat-card {
+            .pillar-icon {
                 border-width: 2px;
             }
         }
@@ -594,60 +392,32 @@
 </head>
 <body>
     <div class="cds-grid">
-        <!-- Header -->
-        <header class="header" role="banner">
-            <h1>The Wellness Project</h1>
-            <p>We're excited to share our new Team Wellbeing Initiative and would love to hear your thoughts!</p>
-        </header>
-
-        <!-- Poster Section -->
-        <section class="cds-card poster-section" aria-labelledby="poster-title">
-            <div class="poster">
-                <div class="poster-content">
-                    <h2 id="poster-title" class="poster-title">The Wellness Project</h2>
-                    <p class="poster-tagline">Nurturing wellbeing, together</p>
-                    <p class="poster-message">Watch this space for more updates</p>
-                    
-                    <div class="wellness-icons" role="list" aria-label="Wellness focus areas">
-                        <div class="icon-item" role="listitem">
-                            <div class="icon-circle" aria-hidden="true">🧘</div>
-                            <span class="icon-label">Mindfulness</span>
-                        </div>
-                        <div class="icon-item" role="listitem">
-                            <div class="icon-circle" aria-hidden="true">💪</div>
-                            <span class="icon-label">Fitness</span>
-                        </div>
-                        <div class="icon-item" role="listitem">
-                            <div class="icon-circle" aria-hidden="true">🤝</div>
-                            <span class="icon-label">Community</span>
-                        </div>
-                        <div class="icon-item" role="listitem">
-                            <div class="icon-circle" aria-hidden="true">🌱</div>
-                            <span class="icon-label">Growth</span>
-                        </div>
-                    </div>
-                    
-                    <p class="poster-footer">ISDL Design and Content Team</p>
+        <!-- Hero Section -->
+        <section class="cds-card hero-section" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="hero-title">The Wellness Project</h1>
+            <p class="hero-tagline">Nurturing wellbeing, together</p>
+            <p class="hero-message">Watch this space for more updates</p>
+            
+            <div class="wellness-pillars" role="list" aria-label="Wellness focus areas">
+                <div class="pillar-item" role="listitem">
+                    <div class="pillar-icon" aria-hidden="true">🧘</div>
+                    <span class="pillar-label">Mindfulness</span>
+                </div>
+                <div class="pillar-item" role="listitem">
+                    <div class="pillar-icon" aria-hidden="true">💪</div>
+                    <span class="pillar-label">Fitness</span>
+                </div>
+                <div class="pillar-item" role="listitem">
+                    <div class="pillar-icon" aria-hidden="true">🤝</div>
+                    <span class="pillar-label">Community</span>
+                </div>
+                <div class="pillar-item" role="listitem">
+                    <div class="pillar-icon" aria-hidden="true">🌱</div>
+                    <span class="pillar-label">Growth</span>
                 </div>
             </div>
-        </section>
-
-        <!-- Statistics Section -->
-        <section class="cds-card stats-section" aria-labelledby="stats-title">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Focus Areas</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Team Focused</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Possibilities</div>
-                </div>
-            </div>
+            
+            <p class="hero-footer">ISDL Design and Content Team</p>
         </section>
 
         <!-- Feedback Section -->
@@ -657,18 +427,16 @@
                 <p>Your feedback will help shape our Team Wellbeing Initiative. Please share your thoughts below.</p>
             </div>
 
-            <div class="form-container">
-                <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="cds-btn"
-                   role="button">
-                    Open Feedback Form
-                </a>
-                <p class="form-helper-text">
-                    Click the button above to share your feedback in a new window
-                </p>
-            </div>
+            <a href="https://forms.monday.com/forms/dec9f934c49a6883fd31628edc7b4957?r=use1"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="cds-btn"
+               role="button">
+                Open Feedback Form
+            </a>
+            <p class="form-helper-text">
+                Click the button above to share your feedback in a new window
+            </p>
 
             <div class="cds-notification" role="status" aria-live="polite">
                 <span class="cds-notification-icon" aria-hidden="true">🔒</span>
